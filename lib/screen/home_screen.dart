@@ -6,13 +6,23 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      body: SizedBox(
+      body: Container(
         width: double.infinity,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color(0xFF2A3A7C),
+              Color(0xFF000118),
+            ],
+          ),
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             _Logo(),
+            SizedBox(height: 28.0),
             _Title(),
           ],
         ),
@@ -40,6 +50,7 @@ class _Title extends StatelessWidget {
     final textStyle = TextStyle(
       color: Colors.white,
       fontSize: 32.0,
+      fontWeight: FontWeight.w300,
     );
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
